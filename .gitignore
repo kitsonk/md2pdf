@@ -1,0 +1,5 @@
+cov.lcov
+cov/
+junit.xml
+node_modules
+.DS_Store

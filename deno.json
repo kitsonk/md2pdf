@@ -1,0 +1,26 @@
+{
+  "name": "@kitsonk/md2pdf",
+  "version": "0.1.0-alpha.0",
+  "tasks": {
+    "check": "deno fmt --check && deno lint && deno check --doc *.ts",
+    "test": "deno test --allow-read --allow-write --allow-net --allow-env --allow-run --parallel",
+    "test:ci": "deno test --allow-read --allow-write --allow-net --allow-env --allow-run --junit-path=junit.xml --coverage=./cov --parallel"
+  },
+  "exports": {
+    ".": "./mod.ts",
+    "./serve": "./serve.ts"
+  },
+  "imports": {
+    "@astral/astral": "jsr:@astral/astral@^0.5.2",
+    "@deno/gfm": "jsr:@deno/gfm@^0.10.0",
+    "prismjs": "npm:prismjs@^1.30.0"
+  },
+  "publish": {
+    "exclude": [
+      "*.test.ts",
+      ".github"
+    ]
+  },
+  "lock": false,
+  "nodeModulesDir": "auto"
+}
