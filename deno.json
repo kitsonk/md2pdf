@@ -18,8 +18,12 @@
   "publish": {
     "exclude": [
       "*.test.ts",
-      ".github"
+      ".github",
+      "_fixtures"
     ]
+  },
+  "fmt": {
+    "exclude": ["_fixtures"]
   },
   "lock": false,
   "nodeModulesDir": "auto"
