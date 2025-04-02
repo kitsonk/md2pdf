@@ -17,6 +17,9 @@ jobs:
         with:
           deno-version: ${{ matrix.version }}
 
+      - name: disable AppArmor
+        run: echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
+
       - name: run checks
         run: deno task check
 
