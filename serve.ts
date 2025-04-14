@@ -78,6 +78,7 @@ export async function serve(
   } = options;
   const { promise, resolve } = Promise.withResolvers<void>();
   const server = Deno.serve({
+    port: 0,
     onListen() {
       resolve();
     },
