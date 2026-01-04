@@ -1,6 +1,6 @@
 {
   "name": "@kitsonk/md2pdf",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "tasks": {
     "check": "deno fmt --check && deno lint && deno check --doc *.ts",
     "test": "deno test --allow-read --allow-write --allow-net --allow-env --allow-run --parallel",
@@ -23,7 +23,8 @@
     ]
   },
   "fmt": {
-    "exclude": ["_fixtures"]
+    "exclude": ["_fixtures"],
+    "lineWidth": 120
   },
   "lock": false,
   "nodeModulesDir": "auto"

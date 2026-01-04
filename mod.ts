@@ -46,23 +46,12 @@ export type GenerateOptions = ServeOptions & PdfOptions;
  * Resolves with a PDF in the format of {@linkcode Uint8Array} based on the
  * provided markdown string.
  */
-export async function generate(
-  md: string,
-  options: GenerateOptions = {},
-): Promise<Uint8Array> {
+export async function generate(md: string, options: GenerateOptions = {}): Promise<Uint8Array<ArrayBuffer>> {
   const server = await serve(md, options);
   const browser = await launch();
   const page = await browser.newPage(`http://localhost:${server.addr.port}/`);
-  const {
-    printBackground = true,
-    preferCSSPageSize = true,
-    ...pdfOptions
-  } = options;
-  const pdf = await page.pdf({
-    printBackground,
-    preferCSSPageSize,
-    ...pdfOptions,
-  });
+  const { printBackground = true, preferCSSPageSize = true, ...pdfOptions } = options;
+  const pdf = await page.pdf({ printBackground, preferCSSPageSize, ...pdfOptions }) as Uint8Array<ArrayBuffer>;
 
   await browser.close();
   await server.shutdown();

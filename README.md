@@ -4,8 +4,7 @@ A markdown to PDF library.
 
 ## Usage
 
-Use the `generate()` function to convert markdown to a PDF encoded as a
-`Uint8Array`.
+Use the `generate()` function to convert markdown to a PDF encoded as a `Uint8Array`.
 
 ```ts
 import { generate } from "@kitsonk/md2pdf";

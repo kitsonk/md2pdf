@@ -66,16 +66,8 @@ export interface ServeOptions extends RenderOptions {
  * await server.shutdown();
  * ```
  */
-export async function serve(
-  md: string,
-  options: ServeOptions = {},
-): Promise<Deno.HttpServer<Deno.NetAddr>> {
-  const {
-    title = "",
-    pageSize = "A4",
-    additionalCss,
-    ...renderOptions
-  } = options;
+export async function serve(md: string, options: ServeOptions = {}): Promise<Deno.HttpServer<Deno.NetAddr>> {
+  const { title = "", pageSize = "A4", additionalCss, ...renderOptions } = options;
   const { promise, resolve } = Promise.withResolvers<void>();
   const server = Deno.serve({
     port: 0,
