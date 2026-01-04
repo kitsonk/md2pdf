@@ -1,7 +1,8 @@
+// deno-lint-ignore-file no-import-prefix
 import { generate } from "./mod.ts";
 
-import { readPdfText } from "npm:pdf-text-reader";
-import { assertEquals } from "jsr:@std/assert/equals";
+import { readPdfText } from "npm:pdf-text-reader@5.1.0";
+import { assertEquals } from "jsr:@std/assert@1/equals";
 
 Deno.test({
   name: "generate()",

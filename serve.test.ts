@@ -1,4 +1,5 @@
-import { assertEquals } from "jsr:@std/assert/equals";
+// deno-lint-ignore no-import-prefix
+import { assertEquals } from "jsr:@std/assert@1/equals";
 
 import { serve } from "./serve.ts";
 

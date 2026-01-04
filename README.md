@@ -24,7 +24,7 @@ console.log("Hello, world!");
 `;
 
 const pdf = await generate(md);
-Deno.writeFile("output.pdf", pdf);
+await Deno.writeFile("output.pdf", pdf);
 ```
 
 ---
